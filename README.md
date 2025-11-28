@@ -13,7 +13,7 @@ Registered funds—including open-ended, closed-ended, and exchange-traded funds
 
 ### Core Functionality
 - **CIK Search**: Enter any valid CIK to retrieve fund holdings
-- **Real-time Streaming**: Server-Sent Events (SSE) for live progress updates during data fetching
+- **Real-time Streaming**: Server-Sent Events for live progress updates during data fetching
 - **Multi-Series Support**: Handles funds with multiple series filings on the same date
 - **Automatic URL Fallback**: Intelligently tries alternative SEC URLs if primary document fails
 
@@ -22,7 +22,7 @@ Registered funds—including open-ended, closed-ended, and exchange-traded funds
 - ✅ **Enhanced UI/UX**: Sorting, filtering, pagination, and responsive design
 - ✅ **Data Visualization**: Interactive donut charts showing portfolio allocation
 - ✅ **Caching and Performance**: Multi-layer caching (backend LRU cache + frontend client cache)
-- ✅ **Rate Limiting**: Custom rate limiter to prevent API abuse (10 req/min, 100 req/hour)
+- ✅ **Security Enhancements**: Custom rate limiter to prevent API abuse (10 req/min, 100 req/hour)
 - ✅ **Testing**: Comprehensive unit tests
 
 ---
@@ -53,7 +53,6 @@ holdings-viewer/
 │   └── .gitignore
 │
 ├── README.md                  
-├── INSTRUCTIONS.md            # Original project requirements
 └── .gitignore
 ```
 
@@ -77,7 +76,7 @@ holdings-viewer/
 2. **Create virtual environment** (recommended)
    ```bash
    python3 -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv/bin/activate 
    ```
 
 3. **Install dependencies**
@@ -95,7 +94,6 @@ holdings-viewer/
 5. **Verify it's running**
    ```bash
    curl http://localhost:8000/
-   # Should return: {"status":"running","service":"SEC N-PORT Viewer"}
    ```
 
 ### Frontend Setup
@@ -120,7 +118,6 @@ holdings-viewer/
 4. **Build for production** (optional)
    ```bash
    npm run build
-   npm run preview  # Preview production build
    ```
 
 ### Running Both Services
@@ -205,7 +202,6 @@ All tests use pytest fixtures and httpx for async testing, with external SEC API
 
 **Backend (Render):**
 - `PORT`: Automatically set by Render
-- `FRONTEND_URL`: (Optional) For CORS restriction
 
 **Frontend (Vercel):**
 - `VITE_BACKEND_URL`: Your Render backend URL
