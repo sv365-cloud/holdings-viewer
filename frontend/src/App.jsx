@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Navbar from "./components/Navbar";
-import backendUrl from "./config";
+import backendUrl from "./Config";
 
 import { Database, ExternalLink, Loader2, Search, X, XCircle, Info } from "lucide-react";
 import ResultsDashboard from "./components/ResultsDashboard";
